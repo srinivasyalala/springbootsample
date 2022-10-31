@@ -5,10 +5,7 @@ import java.util.List;
 import com.srinivasyalala.springbootsample.model.Product;
 import com.srinivasyalala.springbootsample.service.IProductService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import static java.lang.Boolean.TRUE;
 
@@ -34,5 +31,11 @@ public class ProductController
         //returns the product list
         return products;
         //return TRUE;
+    }
+
+    @RequestMapping(name = "GetName", value = "/name", method = RequestMethod.GET)
+    public String getName()
+    {
+        return "Hello My World !";
     }
 }
